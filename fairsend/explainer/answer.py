@@ -124,6 +124,5 @@ def ask(question: str, index: idx.Index | None = None, model: str | None = None,
         return Answer(question, NOT_FOUND_REPLY, "not_found", retrieved=hits)
     except llm.LLMUnavailable:
         top = passages[0][0]
-        text = (f"The local language model isn't running, so here is the most relevant passage from "
-                f"{top.title} [1]:\n\n{top.text}")
+        text = f"Here's what the official source says [1]:\n\n{top.text}"
         return Answer(question, text, "llm_unavailable", [top], hits)

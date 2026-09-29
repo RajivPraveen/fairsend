@@ -6,6 +6,10 @@ import sys
 import threading
 from pathlib import Path
 
+# Import pandas fully before anything else. Plotly picks up pandas from sys.modules without waiting for it to
+# finish importing, so when two visitors open a freshly started server at once, one could see a half-loaded
+# pandas and crash. Importing it here first makes every session wait for the complete module.
+import pandas  # noqa: F401
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))

@@ -9,7 +9,22 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-ROOT = Path(__file__).resolve().parent.parent
+def _project_root() -> Path:
+    """The FairSend project folder (holds data/, reports/, .env).
+
+    FAIRSEND_HOME wins if set. In a source checkout it's the folder above this package. When FairSend is
+    installed as a regular package (e.g. by a hosting service), the package lives in site-packages, so the
+    folder the app is run from is used instead.
+    """
+    if os.getenv("FAIRSEND_HOME"):
+        return Path(os.environ["FAIRSEND_HOME"]).resolve()
+    checkout = Path(__file__).resolve().parent.parent
+    if (checkout / "pyproject.toml").exists():
+        return checkout
+    return Path.cwd().resolve()
+
+
+ROOT = _project_root()
 load_dotenv(ROOT / ".env")
 
 DATA_DIR = ROOT / "data"
