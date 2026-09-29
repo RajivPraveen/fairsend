@@ -100,7 +100,7 @@ def ask(question: str, index: idx.Index | None = None, model: str | None = None,
         return Answer(question, ADVICE_REPLY, "declined_advice")
     index = index or idx.default_index()
     hits = index.search(question, k=TOP_K)
-    passages = [(c, s) for c, s in hits if s >= MIN_SCORE]
+    passages = [(c, s) for c, s in hits if s >= getattr(index, "min_score", MIN_SCORE)]
     if not passages:
         return Answer(question, NOT_FOUND_REPLY, "not_found", retrieved=hits)
     try:

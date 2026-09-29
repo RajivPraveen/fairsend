@@ -1,0 +1,4 @@
+# Used by Streamlit Community Cloud to install the hosted demo.
+# Installs FairSend with receipt reading (OCR). The local-AI extras (Ollama model, embeddings) aren't
+# needed online: the demo falls back to rule-based receipt reading and keyword search for Ask.
+.[ocr]

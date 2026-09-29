@@ -92,6 +92,10 @@ From every price the World Bank has collected since 2011 (378 routes, 869 provid
 
 Full analysis with charts: [reports/global_remittance_costs.md](reports/global_remittance_costs.md)
 
+**Always up to date:** every Monday a scheduled job checks the World Bank's data catalog. When a new quarter is
+published, it downloads it, rebuilds the database, runs the quality checks, and republishes the data the online
+demo uses.
+
 ## Try it
 
 You need Python 3.11, [Ollama](https://ollama.com) (for the AI features), and Tesseract (for reading receipts).
@@ -167,7 +171,8 @@ Details and every design decision: [docs/methodology.md](docs/methodology.md) ·
 
 ```bash
 fairsend compare USA IND 500   # compare providers in the terminal
-fairsend pipeline              # refresh World Bank prices (skips if unchanged)
+fairsend update                # download a new World Bank quarter if there is one, then rebuild
+fairsend pipeline              # rebuild from the local World Bank file (skips if unchanged)
 fairsend fx && fairsend alerts # refresh rates, then send due alerts
 fairsend report                # rebuild the global cost report
 make test                      # unit and scenario tests

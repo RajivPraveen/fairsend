@@ -1,5 +1,6 @@
 import streamlit as st
 
+import common
 import theme
 
 theme.header(
@@ -31,5 +32,11 @@ st.html("""<div class="fs-steps">
 hidden cost.</div>
 <div><b>3. Your answer</b>You see how much would arrive with each option, and which one is cheapest.</div>
 </div>""")
-theme.note("FairSend doesn't send or hold money. It compares real prices so you can choose a provider, then you send "
-           "with that provider directly. Your receipts and questions stay on this computer. Not financial advice.")
+if common.is_demo():
+    theme.note("FairSend doesn't send or hold money. It compares real prices so you can choose a provider, then you "
+               "send with that provider directly. This is the online demo: the AI features (written answers, AI "
+               "receipt reading) run only when you install FairSend on your own computer. Not financial advice.")
+else:
+    theme.note("FairSend doesn't send or hold money. It compares real prices so you can choose a provider, then you "
+               "send with that provider directly. Your receipts and questions stay on this computer. "
+               "Not financial advice.")

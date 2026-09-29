@@ -1,0 +1,39 @@
+name: refresh data
+
+# Every Monday: check the World Bank data catalog for a new quarter, rebuild the database,
+# and publish the compact demo database that the hosted app downloads on startup.
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: pip install -e .
+      - name: Download the latest World Bank release and rebuild
+        run: fairsend update
+      - name: Build the demo database
+        run: fairsend export-demo --out dist/fairsend_demo.db.gz
+      - name: Publish it as the "data" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(python -c "from fairsend.pipeline import fetch; r = fetch.latest_release(); print(r.version or r.file_name)")
+          NOTES="Compact FairSend database built from the World Bank Remittance Prices Worldwide dataset ($VERSION, CC BY 4.0) and ECB reference rates. Rebuilt weekly; the hosted demo downloads it on startup. Built $(date -u +%Y-%m-%d)."
+          if gh release view data >/dev/null 2>&1; then
+            gh release edit data --title "Data: $VERSION" --notes "$NOTES"
+          else
+            gh release create data --title "Data: $VERSION" --notes "$NOTES" --latest=false
+          fi
+          gh release upload data dist/fairsend_demo.db.gz --clobber

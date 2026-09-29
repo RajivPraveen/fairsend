@@ -31,6 +31,13 @@ def money(x: float | None, ccy: str, decimals: int | None = None) -> str:
     return f"{sign}{sym}{s}" if sym else f"{sign}{s} {ccy}"
 
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def is_demo() -> bool:
+    """True on the hosted demo (running on the compact published database)."""
+    from fairsend import demo
+    return demo.is_demo()
+
+
 def md(text: str) -> str:
     """Escape dollar signs for Streamlit markdown, where "$...$" would render as math."""
     return text.replace("$", "\\$")

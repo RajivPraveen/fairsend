@@ -89,6 +89,8 @@ def embed(texts: list[str]) -> np.ndarray:
 
 
 class Index:
+    min_score = 0.30   # cosine similarity below which a passage counts as unrelated
+
     def __init__(self, chunks: list[Chunk], vectors: np.ndarray):
         # PyTorch must load before FAISS: on macOS both ship an OpenMP runtime, and importing FAISS first makes the
         # first query embedding crash the process.
@@ -125,6 +127,67 @@ def build(corpus_dir: Path = CORPUS_DIR, index_dir: Path = INDEX_DIR, force: boo
     return Index(chunks, vectors)
 
 
+STOPWORDS = frozenset("""a an and are as at be but by can do does for from how i if in is it its me my of on or so that
+the their them then there these they this to was what when where which who why will with you your""".split())
+
+
+def _tokens(text: str) -> list[str]:
+    words = re.findall(r"[a-z0-9]+", text.lower())
+    return [w[:-1] if len(w) > 3 and w.endswith("s") else w for w in words if w not in STOPWORDS and len(w) > 1]
+
+
+class KeywordIndex:
+    """Lightweight keyword search (BM25) used when sentence-transformers / FAISS aren't installed.
+
+    Scores are in [0, 1]: 60% from the share of the question's words a passage contains, 40% from its BM25
+    score (capped). `min_score` is the cut-off below which a passage counts as unrelated; it was chosen on the
+    explainer question set (all 37 answerable questions kept, all 4 off-topic ones blocked), with thin margins.
+    """
+
+    min_score = 0.42
+
+    def __init__(self, chunks: list[Chunk], k1: float = 1.4, b: float = 0.75):
+        import math
+        self.chunks = chunks
+        self.docs = [_tokens(f"{c.title} {c.section} {c.text}") for c in chunks]
+        self.avg_len = sum(map(len, self.docs)) / max(len(self.docs), 1)
+        df: dict[str, int] = {}
+        for d in self.docs:
+            for w in set(d):
+                df[w] = df.get(w, 0) + 1
+        n = len(self.docs)
+        self.idf = {w: math.log(1 + (n - f + 0.5) / (f + 0.5)) for w, f in df.items()}
+        self.k1, self.b = k1, b
+
+    def _bm25(self, q: list[str], doc: list[str]) -> float:
+        counts: dict[str, int] = {}
+        for w in doc:
+            counts[w] = counts.get(w, 0) + 1
+        score = 0.0
+        for w in q:
+            tf = counts.get(w, 0)
+            if tf:
+                score += self.idf.get(w, 0) * tf * (self.k1 + 1) / (
+                    tf + self.k1 * (1 - self.b + self.b * len(doc) / self.avg_len))
+        return score
+
+    def search(self, query: str, k: int = 4) -> list[tuple[Chunk, float]]:
+        q = list(dict.fromkeys(_tokens(query)))
+        if not q:
+            return []
+        scored = []
+        for chunk, doc in zip(self.chunks, self.docs):
+            coverage = len(set(q) & set(doc)) / len(q)
+            scored.append((chunk, 0.6 * coverage + 0.4 * min(self._bm25(q, doc) / 12, 1.0)))
+        return sorted(scored, key=lambda x: x[1], reverse=True)[:k]
+
+
 @lru_cache(maxsize=1)
-def default_index() -> Index:
+def default_index() -> Index | KeywordIndex:
+    """Embedding search when sentence-transformers and FAISS are installed; keyword search otherwise."""
+    try:
+        import faiss  # noqa: F401
+        import sentence_transformers  # noqa: F401
+    except ImportError:
+        return KeywordIndex(chunk_corpus())
     return build()

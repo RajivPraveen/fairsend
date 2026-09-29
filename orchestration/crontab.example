@@ -4,5 +4,5 @@
 # Daily: refresh FX rates, then check rate alerts (17:30 Berlin time = 15:30 UTC in summer, 16:30 UTC in winter)
 40 16 * * 1-5  cd /path/to/Fairsend && .venv/bin/fairsend fx >> data/cron.log 2>&1 && .venv/bin/fairsend alerts >> data/cron.log 2>&1
 
-# Weekly: reload World Bank prices (no-op unless a new rpw_dataset_*.xlsx is in data/raw/)
-0 6 * * 1      cd /path/to/Fairsend && .venv/bin/fairsend pipeline >> data/cron.log 2>&1
+# Weekly: download a new World Bank quarter if one is out, then rebuild (no-op otherwise)
+0 6 * * 1      cd /path/to/Fairsend && .venv/bin/fairsend update >> data/cron.log 2>&1

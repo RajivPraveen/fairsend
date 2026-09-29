@@ -30,3 +30,6 @@ eval/receipts/real/*
 
 # Evaluation run logs (results are kept as JSON)
 eval/results/*.log
+
+# Build output (demo database is published as a release file, not committed)
+dist/

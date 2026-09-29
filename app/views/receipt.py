@@ -13,7 +13,11 @@ theme.header("Check a past receipt", "Upload a receipt, or type in the numbers f
                                       "exchange rate secretly cost you, on top of the fee.")
 
 upload = st.file_uploader("Receipt (screenshot or PDF)", type=["png", "jpg", "jpeg", "pdf", "webp"])
-theme.note("Your receipt is read on this computer and never saved or uploaded.")
+if common.is_demo():
+    theme.note("Online demo: your receipt is read in memory on the demo server and never saved. For full privacy, "
+               "install FairSend and it's read on your own computer.")
+else:
+    theme.note("Your receipt is read on this computer and never saved or uploaded.")
 
 if upload is not None:
     key = f"{upload.name}-{upload.size}"

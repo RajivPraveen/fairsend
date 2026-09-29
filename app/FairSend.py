@@ -17,6 +17,18 @@ theme.inject_css()
 theme.register_plotly_template()
 
 
+@st.cache_resource(show_spinner="Loading World Bank prices (first start only)...")
+def ensure_data() -> str:
+    """Use the local database if there is one; otherwise download the published demo copy."""
+    from fairsend import demo
+    return demo.ensure_database()
+
+
+if ensure_data() == "missing":
+    st.error("No price data yet. Run `make data` to build the database from the World Bank file.")
+    st.stop()
+
+
 @st.cache_resource
 def warm_up_ask() -> bool:
     """Once per server: load the search index and the local AI model in the background, so the first question

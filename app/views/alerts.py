@@ -42,6 +42,10 @@ if len(hist) > 2:
     theme.note(f"In the last 3 months the rate reached this on {reached} of {len(hist)} days. That's history, "
                "not a prediction.")
 
+if common.is_demo():
+    st.info("This is the online demo, so alerts can't be saved or emailed here. Install FairSend to get alerts by email.")
+    st.stop()
+
 with st.form("new_alert", border=False):
     email = st.text_input("Your email", placeholder="you@university.edu")
     create = st.form_submit_button("Create alert", type="primary")

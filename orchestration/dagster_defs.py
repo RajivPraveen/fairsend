@@ -4,13 +4,14 @@
 
 Schedules:
   * daily 17:30 Europe/Berlin (after the ECB publishes ~16:00 CET): refresh FX rates, then run alert checks
-  * weekly Monday 06:00: re-run the price pipeline; a no-op unless a new World Bank file is in data/raw/
+  * weekly Monday 06:00: check the World Bank catalog, download a new quarter if there is one, and rebuild
 """
 
 from dagster import Definitions, ScheduleDefinition, job, op
 
 from fairsend import db
 from fairsend.alerts import job as alert_job
+from fairsend.pipeline import fetch
 from fairsend.pipeline import run as pipeline
 from fairsend.pipeline.run import refresh_fx
 
@@ -32,7 +33,9 @@ def check_alerts(context, _rates: dict) -> dict:
 
 @op
 def load_prices(context) -> dict:
-    summary = pipeline.run()
+    path, downloaded = fetch.download(fetch.latest_release())
+    context.log.info(f"World Bank file {path.name}: {'new download' if downloaded else 'unchanged'}")
+    summary = pipeline.run(path)
     context.log.info(f"Pipeline {summary['status']}: {summary.get('notes')}")
     failed = [r for r in summary.get("quality", []) if r["severity"] == "error" and r["pass_rate"] < 0.99]
     if failed:

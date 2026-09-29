@@ -33,7 +33,10 @@ def render(a: ans.Answer) -> str:
 
 index = load_index()
 if not llm.available():
-    st.info("The answer writer (a local AI model) isn't running, so you'll see the most relevant source text instead.")
+    st.info("This online demo doesn't run the AI model, so you'll see the most relevant passage from the official "
+            "sources instead of a written answer. Install FairSend to get written answers."
+            if common.is_demo() else
+            "The answer writer (a local AI model) isn't running, so you'll see the most relevant source text instead.")
 
 EXAMPLES = ["Why isn't a zero-fee transfer free?", "What is the real exchange rate?",
             "How long do I have to cancel a transfer?", "The money never arrived. What can I do?"]
