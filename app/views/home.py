@@ -12,11 +12,11 @@ theme.header(
 
 st.subheader("What do you want to do?")
 TASKS = [
-    ("Compare providers", "See which provider would get the most money to your family.", "views/compare.py"),
+    ("Compare providers", "See which provider would get the most money to your family.", common.page("compare.py")),
     ("Compare tuition costs", "See the cheapest way to pay a big bill from home, and if it would arrive in time.",
-     "views/tuition.py"),
-    ("Check a past receipt", "Find out how much a transfer you already made really cost.", "views/receipt.py"),
-    ("Set a rate alert", "Get an email when the exchange rate reaches your target.", "views/alerts.py"),
+     common.page("tuition.py")),
+    ("Check a past receipt", "Find out how much a transfer you already made really cost.", common.page("receipt.py")),
+    ("Set a rate alert", "Get an email when the exchange rate reaches your target.", common.page("alerts.py")),
 ]
 for row in (TASKS[:2], TASKS[2:]):
     cols = st.columns(2)

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import datetime as dt
+from pathlib import Path
 
 import pandas as pd
 import streamlit as st
@@ -29,6 +30,14 @@ def money(x: float | None, ccy: str, decimals: int | None = None) -> str:
     s = f"{abs(x):,.{decimals}f}"
     sign = "-" if x < 0 else ""
     return f"{sign}{sym}{s}" if sym else f"{sign}{s} {ccy}"
+
+
+VIEWS = Path(__file__).resolve().parent / "views"
+
+
+def page(name: str) -> str:
+    """Absolute path of a page file, for st.page_link. Works whichever file the app was started from."""
+    return str(VIEWS / name)
 
 
 @st.cache_data(ttl=3600, show_spinner=False)
@@ -154,3 +163,11 @@ def global_numbers() -> dict:
     from fairsend.analysis import global_costs as g
     df = g.load()
     return {**g.headline_numbers(df), **g.markup_share(df)}
+
+
+if __name__ == "__main__":
+    # This is a helper module, not the app. If a host was pointed at it as the entry point (easy to pick by
+    # mistake from an autocomplete list), run the real app instead of showing a blank page.
+    import runpy
+
+    runpy.run_path(str(Path(__file__).with_name("FairSend.py")), run_name="__main__")

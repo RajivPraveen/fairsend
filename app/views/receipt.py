@@ -83,4 +83,4 @@ if submitted:
         st.warning("That's unusually high. Please double-check the amounts, currencies and date.")
     theme.note(f"Real rate: {html.escape(r.mid_rate.source)}, {r.mid_rate.rate_date}. Rates move during the day, so "
                "small differences are normal.")
-    st.page_link("views/compare.py", label="Compare providers for next time", icon=":material/arrow_forward:")
+    st.page_link(common.page("compare.py"), label="Compare providers for next time", icon=":material/arrow_forward:")

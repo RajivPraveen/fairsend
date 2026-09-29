@@ -6,8 +6,11 @@
 
 **See what sending money abroad really costs, and keep more of it.**
 
+### [▶ Try the live demo](https://fairsend.streamlit.app)
+
 [What it does](#what-fairsend-does) · [Screenshots](#screenshots) · [Findings](#what-the-data-shows) · [Try it](#try-it) · [Accuracy](#is-it-accurate)
 
+[![Live demo](https://img.shields.io/badge/live%20demo-fairsend.streamlit.app-0F7A4F?style=flat-square)](https://fairsend.streamlit.app)
 ![Python](https://img.shields.io/badge/Python-3.11-0F7A4F?style=flat-square)
 ![Data](https://img.shields.io/badge/Data-World%20Bank%20%2B%20ECB-0F7A4F?style=flat-square)
 ![AI](https://img.shields.io/badge/AI-runs%20on%20your%20laptop-0F7A4F?style=flat-square)
@@ -98,7 +101,11 @@ demo uses.
 
 ## Try it
 
-You need Python 3.11, [Ollama](https://ollama.com) (for the AI features), and Tesseract (for reading receipts).
+**Online:** [fairsend.streamlit.app](https://fairsend.streamlit.app), no install needed. It uses the same real data,
+refreshed weekly. The AI features (written answers, AI receipt reading) run only on your own computer, so the online
+demo uses the rule-based receipt reader and shows the matching official passage for questions.
+
+**On your computer**, for everything including the private local AI. You need Python 3.11, [Ollama](https://ollama.com) (for the AI features), and Tesseract (for reading receipts).
 
 ```bash
 make setup                  # install everything
