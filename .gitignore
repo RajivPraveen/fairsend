@@ -1,0 +1,32 @@
+.venv/
+.tools/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+
+# Data: the raw World Bank file is large and re-downloadable; the DB is rebuilt by the pipeline.
+data/raw/
+data/*.db
+data/*.db-*
+data/cache/
+data/index/
+data/outbox/
+
+# User uploads are never written to disk, but keep a guard anyway.
+uploads/
+
+.DS_Store
+.streamlit/secrets.toml
+.tmp_dagster_home_*/
+
+# Real receipts used for evaluation stay local
+eval/receipts/real/*
+!eval/receipts/real/README.md
+
+# Local editor settings
+.vscode/
+.idea/
+
+# Evaluation run logs (results are kept as JSON)
+eval/results/*.log

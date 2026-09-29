@@ -1,0 +1,16 @@
+# Manual provider aliases, applied after automatic matching (case, punctuation, legal suffixes,
+# and parenthetical qualifiers are already ignored). Add a row when one company appears under
+# names that the automatic key cannot match, such as a rebrand.
+alias,canonical
+Transferwise,Wise
+TransferWise,Wise
+Wise (TransferWise),Wise
+Trans-Fast,Transfast
+Trans Fast,Transfast
+Xoom (PayPal),Xoom
+Walmart 2 World,Walmart2World
+Walmart-2-World,Walmart2World
+Ria Money Transfer,Ria
+Ria Financial,Ria
+Money Gram,MoneyGram
+Western Union Money Transfer,Western Union

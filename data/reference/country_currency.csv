@@ -1,0 +1,140 @@
+iso3,iso2,country_name,currency
+AFG,AF,Afghanistan,AFN
+AGO,AO,Angola,AOA
+ALB,AL,Albania,ALL
+ANT,AN,Netherlands Antilles,ANG
+ARE,AE,United Arab Emirates,AED
+ARM,AM,Armenia,AMD
+AUS,AU,Australia,AUD
+AUT,AT,Austria,EUR
+AZE,AZ,Azerbaijan,AZN
+BEL,BE,Belgium,EUR
+BEN,BJ,Benin,XOF
+BGD,BD,Bangladesh,BDT
+BGR,BG,Bulgaria,BGN
+BHR,BH,Bahrain,BHD
+BIH,BA,Bosnia and Herzegovina,BAM
+BLR,BY,Belarus,BYN
+BOL,BO,Bolivia,BOB
+BRA,BR,Brazil,BRL
+BWA,BW,Botswana,BWP
+CAN,CA,Canada,CAD
+CHE,CH,Switzerland,CHF
+CHL,CL,Chile,CLP
+CHN,CN,China,CNY
+CIV,CI,Côte d'Ivoire,XOF
+CMR,CM,Cameroon,XAF
+COD,CD,"Congo, Rep.",CDF
+COL,CO,Colombia,COP
+COM,KM,Comoros,KMF
+CPV,CV,Cabo Verde,CVE
+CRI,CR,Costa Rica,CRC
+CUB,CU,Cuba,CUP
+CZE,CZ,Czech Republic,CZK
+DEU,DE,Germany,EUR
+DOM,DO,Dominican Republic,DOP
+DZA,DZ,Algeria,DZD
+ECU,EC,Ecuador,USD
+EGY,EG,"Egypt, Arab Rep.",EGP
+ERI,ER,Eritrea,ERN
+ESP,ES,Spain,EUR
+EST,EE,Estonia,EUR
+ETH,ET,Ethiopia,ETB
+FJI,FJ,Fiji,FJD
+FRA,FR,France,EUR
+GBR,GB,United Kingdom,GBP
+GEO,GE,Georgia,GEL
+GHA,GH,Ghana,GHS
+GMB,GM,"Gambia, The",GMD
+GTM,GT,Guatemala,GTQ
+GUY,GY,Guyana,GYD
+HND,HN,Honduras,HNL
+HRV,HR,Croatia,EUR
+HTI,HT,Haiti,HTG
+HUN,HU,Hungary,HUF
+IDN,ID,Indonesia,IDR
+IND,IN,India,INR
+ISR,IL,Israel,ILS
+ITA,IT,Italy,EUR
+JAM,JM,Jamaica,JMD
+JOR,JO,Jordan,JOD
+JPN,JP,Japan,JPY
+KAZ,KZ,Kazakhstan,KZT
+KEN,KE,Kenya,KES
+KGZ,KG,Kyrgyz Republic,KGS
+KHM,KH,Cambodia,KHR
+KIR,KI,Kiribati,AUD
+KOR,KR,"Korea, Rep.",KRW
+KSV,XK,Kosovo,EUR
+KWT,KW,Kuwait,KWD
+LAO,LA,Lao PDR,LAK
+LBN,LB,Lebanon,LBP
+LBR,LR,Liberia,LRD
+LKA,LK,Sri Lanka,LKR
+LSO,LS,Lesotho,ZAR
+LTU,LT,Lithuania,EUR
+LVA,LV,Latvia,EUR
+MAR,MA,Morocco,MAD
+MDA,MD,Moldova,MDL
+MDG,MG,Madagascar,MGA
+MEX,MX,Mexico,MXN
+MKD,MK,"Macedonia, FYR",MKD
+MLI,ML,Mali,XOF
+MMR,MM,Myanmar,MMK
+MOZ,MZ,Mozambique,MZN
+MWI,MW,Malawi,MWK
+MYS,MY,Malaysia,MYR
+NAM,,Namibia,ZAR
+NGA,NG,Nigeria,NGN
+NIC,NI,Nicaragua,NIO
+NLD,NL,Netherlands,EUR
+NOR,NO,Norway,NOK
+NPL,NP,Nepal,NPR
+NZL,NZ,New Zealand,NZD
+OMN,OM,Oman,OMR
+PAK,PK,Pakistan,PKR
+PAN,PA,Panama,USD
+PER,PE,Peru,PEN
+PHL,PH,Philippines,PHP
+PNG,PG,Papua New Guinea,PGK
+POL,PL,Poland,PLN
+PRT,PT,Portugal,EUR
+PRY,PY,Paraguay,PYG
+PSE,PS,West Bank and Gaza,ILS
+QAT,QA,Qatar,QAR
+ROU,RO,Romania,RON
+RUS,RU,Russian Federation,RUB
+RWA,RW,Rwanda,RWF
+SAU,SA,Saudi Arabia,SAR
+SDN,SD,Sudan,SDG
+SEN,SN,Senegal,XOF
+SGP,SG,Singapore,SGD
+SLB,SB,Solomon Islands,SBD
+SLE,SL,Sierra Leone,SLE
+SLV,SV,El Salvador,USD
+SOM,SO,Somalia,SOS
+SRB,RS,Serbia,RSD
+SSD,SS,South Sudan,SSP
+SUR,SR,Suriname,SRD
+SWE,SE,Sweden,SEK
+SWZ,SZ,Swaziland,SZL
+SYR,SY,Syrian Arab Republic,SYP
+TGO,TG,Togo,XOF
+THA,TH,Thailand,THB
+TJK,TJ,Tajikistan,TJS
+TON,TO,Tonga,TOP
+TUN,TN,Tunisia,TND
+TUR,TR,Turkey,TRY
+TUV,TV,Tuvalu,AUD
+TZA,TZ,Tanzania,TZS
+UGA,UG,Uganda,UGX
+UKR,UA,Ukraine,UAH
+USA,US,United States,USD
+UZB,UZ,Uzbekistan,UZS
+VNM,VN,Vietnam,VND
+VUT,VU,Vanuatu,VUV
+WSM,WS,Samoa,WST
+YEM,YE,"Yemen, Rep.",YER
+ZAF,ZA,South Africa,ZAR
+ZMB,ZM,Zambia,ZMW
+ZWE,ZW,Zimbabwe,USD

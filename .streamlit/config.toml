@@ -1,0 +1,51 @@
+# FairSend theme: minimal. Neutral surfaces, one accent (money green), one self-hosted font.
+
+[server]
+enableStaticServing = true
+# Receipts are processed in memory; keep uploads small.
+maxUploadSize = 15
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+base = "light"
+font = "Plus Jakarta Sans, sans-serif"
+headingFont = "Plus Jakarta Sans, sans-serif"
+headingFontWeights = [700, 700, 650, 600, 600, 600]
+baseRadius = "0.75rem"
+buttonRadius = "full"
+showWidgetBorder = true
+showSidebarBorder = true
+linkUnderline = false
+metricValueFontWeight = 700
+
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/plus-jakarta-sans-latin-wght-normal.woff2"
+weight = "200 800"
+
+[theme.light]
+primaryColor = "#0F7A4F"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F6F7F6"
+textColor = "#111418"
+borderColor = "#E6E8EB"
+linkColor = "#0F7A4F"
+greenColor = "#0F7A4F"
+dataframeHeaderBackgroundColor = "#F6F7F6"
+chartCategoricalColors = ["#0F7A4F", "#E0A21B", "#3A6FC4", "#E87BA4", "#008300", "#4A3AA7", "#E34948", "#1BAF7A"]
+
+[theme.dark]
+primaryColor = "#34C785"
+backgroundColor = "#0F1113"
+secondaryBackgroundColor = "#181B1E"
+textColor = "#F3F4F6"
+borderColor = "#2A2E33"
+linkColor = "#34C785"
+greenColor = "#20A06A"
+dataframeHeaderBackgroundColor = "#181B1E"
+chartCategoricalColors = ["#20A06A", "#C47F0A", "#6A8FE0", "#D55181", "#008300", "#9085E9", "#E66767", "#199E70"]

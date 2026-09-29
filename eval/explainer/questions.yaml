@@ -1,0 +1,385 @@
+# FairSend explainer evaluation set.
+# answerable: true  -> the answer must be grounded in expected_sources (ids of files in fairsend/explainer/corpus/).
+#                      key_facts: every fact must appear in the answer; each fact is a list of acceptable
+#                      alternatives, matched as case-insensitive substrings.
+# answerable: false -> the explainer must decline (decline_reason: out_of_scope | personal_advice).
+
+- id: q01
+  question: "Why is a zero-fee transfer not really free?"
+  answerable: true
+  expected_sources: [fairsend-methodology]
+  key_facts:
+    - ["exchange rate", "rate"]
+    - ["markup", "margin", "mark-up", "spread"]
+  reference_answer: "Even with no fee, the provider can convert your money at a rate worse than the mid-market rate and keep the difference, so the cost moves from the fee into the exchange-rate markup. Comparing total cost (fee plus markup) or the amount the recipient gets shows the real price."
+
+- id: q02
+  question: "What does my provider have to tell me before I send money?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-31, cfpb-ask-remittance-rights]
+  key_facts:
+    - ["fee"]
+    - ["exchange rate"]
+    - ["total to recipient", "amount of money expected to be delivered", "amount that will be received", "received", "delivered"]
+  reference_answer: "Before you pay, a remittance transfer provider must disclose the transfer amount, its fees and taxes, the total, the exchange rate, any covered third-party fees, and the total amount that will be received by the recipient, plus a statement if recipient-bank fees or foreign taxes may reduce that amount."
+
+- id: q03
+  question: "How long do I have to cancel a remittance transfer?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-34, cfpb-ask-cancel-transfer, cfpb-ask-remittance-rights]
+  key_facts:
+    - ["30 minutes"]
+    - ["cancel"]
+  reference_answer: "You can cancel at no charge within 30 minutes after paying, as long as the money has not already been picked up or deposited into the recipient's account."
+
+- id: q04
+  question: "What is the mid-market rate?"
+  answerable: true
+  expected_sources: [fairsend-methodology]
+  key_facts:
+    - ["midpoint", "mid-point", "middle"]
+    - ["buy", "sell"]
+  reference_answer: "The mid-market rate is the midpoint between the buying and selling prices of a currency in wholesale markets, also called the interbank rate; it is the benchmark for a conversion with no markup."
+
+- id: q05
+  question: "What is the UN target for remittance costs?"
+  answerable: true
+  expected_sources: [un-sdg-10c, worldbank-rpw-q3-2025]
+  key_facts:
+    - ["3 per", "3%", "three per"]
+    - ["5 per", "5%", "five per"]
+    - ["2030"]
+  reference_answer: "SDG target 10.c aims, by 2030, to reduce remittance transaction costs to less than 3 percent and to eliminate corridors with costs higher than 5 percent."
+
+- id: q06
+  question: "What is an FX margin?"
+  answerable: true
+  expected_sources: [un-sdg-10c, worldbank-rpw-q3-2025, fairsend-methodology]
+  key_facts:
+    - ["exchange rate"]
+    - ["interbank", "mid-market", "mid market"]
+  reference_answer: "The FX (foreign exchange) margin is how far the exchange rate a provider gives the customer falls short of the interbank or mid-market rate; it is part of the total cost of a transfer alongside the fee."
+
+- id: q07
+  question: "How long do I have to report an error with my transfer?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-33, cfpb-ask-report-error, cfpb-ask-remittance-rights]
+  key_facts:
+    - ["180 days"]
+    - ["available", "availability"]
+  reference_answer: "You have 180 days from the date the provider disclosed the money would be available to report an error, though you should contact the provider as soon as possible."
+
+- id: q08
+  question: "What is a guaranteed rate?"
+  answerable: true
+  expected_sources: [fairsend-methodology]
+  key_facts:
+    - ["lock", "fixed", "fixes"]
+    - ["quote"]
+  reference_answer: "A guaranteed or locked rate means the provider fixes the exchange rate at the time of the quote, so the amount received won't change if the market moves, usually if you pay within a set window. It does not mean the rate has no markup."
+
+- id: q09
+  question: "After I report a problem, how long does the company get to look into it?"
+  answerable: true
+  expected_sources: [cfpb-ask-report-error, cfpb-reg-e-1005-33, cfpb-ask-remittance-rights]
+  key_facts:
+    - ["90 days"]
+    - ["investigat"]
+  reference_answer: "The provider must investigate and decide whether an error occurred within 90 days of receiving your notice, and report the results to you within three business days after finishing the investigation."
+
+- id: q10
+  question: "is there a minimum amount before the remittance rules even apply?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-30, cfpb-ask-remittance-rights]
+  key_facts:
+    - ["15"]
+    - ["more than", "or less", "over", "above"]
+  reference_answer: "Yes. Federal remittance protections cover electronic transfers of more than $15; transfers of $15 or less are excluded from the definition of a remittance transfer."
+
+- id: q11
+  question: "My small credit union only sends a few international transfers a year. Do the federal remittance rules apply to it?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-30, cfpb-ask-remittance-rights]
+  key_facts:
+    - ["500"]
+    - ["year"]
+  reference_answer: "Maybe not. A company is not a remittance transfer provider if it provided 500 or fewer remittance transfers in the previous calendar year and provides 500 or fewer in the current year, and then the federal remittance protections don't have to be provided."
+
+- id: q12
+  question: "I read that companies sending 100 or fewer transfers a year are exempt. Is that still the number?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-30]
+  key_facts:
+    - ["500"]
+    - ["2020"]
+  reference_answer: "No. On July 21, 2020 the normal-course-of-business safe harbor changed from 100 to 500 remittance transfers per calendar year."
+
+- id: q13
+  question: "What should be on the receipt I get after paying for a transfer?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-31]
+  key_facts:
+    - ["available"]
+    - ["cancel"]
+    - ["error"]
+  reference_answer: "The receipt repeats the pre-payment figures (amount, fees, taxes, exchange rate, total to recipient) and adds the date funds will be available, the recipient's name, a statement of your error-resolution and cancellation rights, the provider's contact details, and how to contact the state regulator and the CFPB."
+
+- id: q14
+  question: "What's the average cost of sending $200 abroad these days?"
+  answerable: true
+  expected_sources: [worldbank-rpw-q3-2025]
+  key_facts:
+    - ["6.36"]
+    - ["2025"]
+  reference_answer: "According to the World Bank's Remittance Prices Worldwide report, the global average total cost of sending $200 was 6.36 percent in Q3 2025, down from 6.49 percent in Q1 2025."
+
+- id: q15
+  question: "What is the World Bank's SmaRT indicator?"
+  answerable: true
+  expected_sources: [worldbank-rpw-q3-2025, un-sdg-10c]
+  key_facts:
+    - ["three cheapest", "3 cheapest"]
+    - ["200"]
+  reference_answer: "SmaRT (Smart Remitter Target) is the average cost of the three cheapest qualifying services for sending the equivalent of $200 in a corridor, reflecting what a well-informed sender could pay; services must be transparent, arrive within five days and be accessible. The global SmaRT average was 3.29 percent in Q3 2025."
+
+- id: q16
+  question: "Which part of the world is the most expensive to send money to?"
+  answerable: true
+  expected_sources: [worldbank-rpw-q3-2025]
+  key_facts:
+    - ["sub-saharan africa"]
+    - ["8.46"]
+  reference_answer: "Sub-Saharan Africa remained the most expensive region to send money to in Q3 2025, with an average total cost of 8.46 percent."
+
+- id: q17
+  question: "Are banks a cheap way to send remittances?"
+  answerable: true
+  expected_sources: [worldbank-rpw-q3-2025]
+  key_facts:
+    - ["14.99"]
+    - ["expensive", "costliest"]
+  reference_answer: "Not on average. World Bank data show banks were the most expensive type of provider in Q3 2025, averaging 14.99 percent to send $200, compared with 4.72 percent for money transfer operators."
+
+- id: q18
+  question: "Is sending $500 cheaper than sending $200, percentage-wise?"
+  answerable: true
+  expected_sources: [worldbank-rpw-q3-2025]
+  key_facts:
+    - ["4.08"]
+    - ["6.36"]
+  reference_answer: "Yes on average: in Q3 2025 the global average cost of sending $500 was 4.08 percent versus 6.36 percent for $200, partly because a fixed fee weighs less on a larger amount."
+
+- id: q19
+  question: "Are digital money transfers cheaper than cash-based ones?"
+  answerable: true
+  expected_sources: [worldbank-rpw-q3-2025]
+  key_facts:
+    - ["4.59"]
+    - ["7.30", "7.3"]
+  reference_answer: "On average yes: in Q3 2025 digital remittances cost 4.59 percent globally, compared with 7.30 percent for non-digital remittances."
+
+- id: q20
+  question: "Why did my mom get less money than I sent her?"
+  answerable: true
+  expected_sources: [cfpb-ask-amount-received-less, cfpb-reg-e-1005-31]
+  key_facts:
+    - ["fee"]
+    - ["tax"]
+  reference_answer: "Fees or taxes may be deducted along the way, including by third-party companies processing the transfer and by the recipient's bank, and foreign taxes can apply. If you think the amount is wrong, you can submit a notice of error to the provider."
+
+- id: q21
+  question: "Does the provider have to tell me about fees the recipient's bank will take?"
+  answerable: true
+  expected_sources: [cfpb-ask-amount-received-less, cfpb-reg-e-1005-31]
+  key_facts:
+    - ["upfront", "statement", "let you know", "may apply"]
+    - ["amount"]
+  reference_answer: "The provider must tell you upfront that the recipient's bank fees or foreign taxes may apply and reduce what arrives, but federal law does not require it to tell you the amount of those deductions."
+
+- id: q22
+  question: "Can a money transfer company give me estimated numbers instead of exact ones?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-32, cfpb-ask-remittance-rights]
+  key_facts:
+    - ["estimate"]
+    - ["some cases", "certain", "exception", "limited"]
+  reference_answer: "Only in certain cases allowed by federal law, and the figures must be clearly identified as estimates. Otherwise disclosures must be accurate when you pay."
+
+- id: q23
+  question: "When is a provider allowed to estimate the exchange rate?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-32]
+  key_facts:
+    - ["countr"]
+    - ["five or more business days", "5 or more business days", "scheduled"]
+    - ["insured institution", "bank", "credit union", "1,000"]
+  reference_answer: "Under Regulation E, estimates are allowed for transfers to certain countries whose laws or payment methods prevent an exact figure, for transfers scheduled five or more business days ahead, and for insured banks or credit unions sending from the sender's account that made 1,000 or fewer transfers to that country last year and cannot determine the exact rate."
+
+- id: q24
+  question: "I scheduled a transfer for next week. Can I still cancel it?"
+  answerable: true
+  expected_sources: [cfpb-ask-cancel-transfer, cfpb-reg-e-1005-34]
+  key_facts:
+    - ["three business days", "3 business days"]
+  reference_answer: "For a transfer scheduled at least three business days in advance, you can cancel as long as the provider receives your request at least three business days before the scheduled transfer date."
+
+- id: q25
+  question: "If I cancel in time, do I get the fee back too?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-34]
+  key_facts:
+    - ["refund"]
+    - ["fee"]
+    - ["three business days", "3 business days"]
+  reference_answer: "Yes. The provider must refund the total amount you paid, including fees and, where not prohibited by law, taxes, at no extra cost, within three business days of your cancellation request."
+
+- id: q26
+  question: "What kinds of mistakes is a remittance provider responsible for fixing?"
+  answerable: true
+  expected_sources: [cfpb-ask-report-error, cfpb-reg-e-1005-33]
+  key_facts:
+    - ["incorrect amount", "correct amount", "wrong amount"]
+    - ["date", "deliver"]
+  reference_answer: "Errors include an incorrect amount paid, computational or bookkeeping errors, delivering the wrong amount, failing to deliver funds by the disclosed date (or at all), and delivering to the wrong recipient."
+
+- id: q27
+  question: "Does just asking where my transfer is count as an error?"
+  answerable: true
+  expected_sources: [cfpb-reg-e-1005-33]
+  key_facts:
+    - ["status"]
+    - ["date of availability", "disclosed date", "by the date", "available"]
+  reference_answer: "No. An inquiry about a transfer's status is not an error, unless the funds were not made available to the recipient by the disclosed date of availability."
+
+- id: q28
+  question: "What info should I give when I report a mistake with a transfer?"
+  answerable: true
+  expected_sources: [cfpb-ask-report-error, cfpb-reg-e-1005-33]
+  key_facts:
+    - ["name"]
+    - ["telephone", "phone", "address"]
+    - ["amount", "error"]
+  reference_answer: "Give your name and phone number or address, the recipient's name and phone number or address, the dollar amount of the transfer, and a description of the error, plus anything else that helps identify the transfer, such as a confirmation code."
+
+- id: q29
+  question: "The money never showed up. What can I get from the provider?"
+  answerable: true
+  expected_sources: [cfpb-ask-report-error, cfpb-reg-e-1005-33, cfpb-ask-remittance-rights]
+  key_facts:
+    - ["refund"]
+    - ["resen", "sent again", "send again", "made available", "make available"]
+  reference_answer: "If the money never arrives, you may be able to get a refund or have the transfer sent again; for late or failed delivery the provider must also refund the fees you paid."
+
+- id: q30
+  question: "I typed the wrong account number. Will I definitely get my money back?"
+  answerable: true
+  expected_sources: [cfpb-ask-report-error]
+  key_facts:
+    - ["account number", "routing number"]
+    - ["not required", "verify", "reasonable"]
+  reference_answer: "Not necessarily. If the mistake was your incorrect account or routing number and the provider took certain steps, such as verifying the routing number matched the institution name and making reasonable efforts to retrieve the funds, it is not required to refund or resend the money."
+
+- id: q31
+  question: "Can I get my remittance receipt in Spanish?"
+  answerable: true
+  expected_sources: [cfpb-ask-remittance-rights, cfpb-reg-e-1005-31]
+  key_facts:
+    - ["language"]
+    - ["advertis", "market"]
+  reference_answer: "Generally yes if the provider uses that language in its advertising or marketing where you made the transfer, or if it conducted the transfer with you in that language."
+
+- id: q32
+  question: "How does FairSend work out the total cost of a transfer?"
+  answerable: true
+  expected_sources: [fairsend-methodology]
+  key_facts:
+    - ["fee"]
+    - ["markup", "margin"]
+  reference_answer: "FairSend adds the upfront fee to the markup cost, which is the amount converted times the exchange-rate markup percentage: total cost = fee + markup cost."
+
+- id: q33
+  question: "Where does FairSend get its mid-market exchange rates from?"
+  answerable: true
+  expected_sources: [fairsend-methodology]
+  key_facts:
+    - ["european central bank", "ecb"]
+    - ["frankfurter"]
+  reference_answer: "FairSend uses the European Central Bank's daily reference rates via the Frankfurter service, an open daily currency dataset as a fallback for currencies the ECB doesn't publish, and the World Bank's recorded interbank rate as a last resort."
+
+- id: q34
+  question: "Are the World Bank remittance prices live quotes?"
+  answerable: true
+  expected_sources: [fairsend-methodology, worldbank-rpw-q3-2025]
+  key_facts:
+    - ["snapshot", "not live"]
+    - ["200"]
+    - ["500"]
+  reference_answer: "No. They are periodic snapshots, labelled by quarter and collected by mystery shopping, for sending about $200 and $500, so they show typical prices at collection time rather than today's quote."
+
+- id: q35
+  question: "How do you calculate the exchange-rate markup percentage?"
+  answerable: true
+  expected_sources: [fairsend-methodology]
+  key_facts:
+    - ["mid-market", "mid market", "mid rate"]
+    - ["provider"]
+  reference_answer: "Markup % = (mid-market rate - provider's rate) / mid-market rate x 100. For example, a rate of 98 when the mid-market rate is 100 is a 2 percent markup."
+
+- id: q36
+  question: "What does the World Bank mean by a 'transparent' remittance service?"
+  answerable: true
+  expected_sources: [un-sdg-10c]
+  key_facts:
+    - ["fee"]
+    - ["exchange rate", "fx", "foreign exchange"]
+    - ["disclose"]
+  reference_answer: "A transparent service is one whose cost can be split into its transfer fee and foreign exchange margin; if the provider does not disclose the exchange rate applied, the service is not transparent and is excluded from the global average."
+
+- id: q37
+  question: "Who can I complain to if a money transfer company won't fix my problem?"
+  answerable: true
+  expected_sources: [cfpb-ask-report-error, cfpb-reg-e-1005-31]
+  key_facts:
+    - ["cfpb", "consumer financial protection bureau"]
+    - ["state"]
+  reference_answer: "You can submit a complaint to the CFPB; your receipt must list contact details for the CFPB and, in some cases, the state agency that licenses the provider, and state law protections may also apply."
+
+- id: q38
+  question: "What's the weather in Mumbai this week?"
+  answerable: false
+  decline_reason: out_of_scope
+
+- id: q39
+  question: "How do I file US taxes as an international student?"
+  answerable: false
+  decline_reason: out_of_scope
+
+- id: q40
+  question: "Can you help me write a cover letter for a software internship?"
+  answerable: false
+  decline_reason: out_of_scope
+
+- id: q41
+  question: "What's the best recipe for chicken biryani?"
+  answerable: false
+  decline_reason: out_of_scope
+
+- id: q42
+  question: "Should I wait until next month to send money because the rupee will fall?"
+  answerable: false
+  decline_reason: personal_advice
+
+- id: q43
+  question: "Which provider should I put my savings in?"
+  answerable: false
+  decline_reason: personal_advice
+
+- id: q44
+  question: "Is now a good time to convert all my dollars into euros?"
+  answerable: false
+  decline_reason: personal_advice
+
+- id: q45
+  question: "Should I invest the money I'd send home in index funds instead?"
+  answerable: false
+  decline_reason: personal_advice

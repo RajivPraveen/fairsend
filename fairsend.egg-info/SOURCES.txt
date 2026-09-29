@@ -1,0 +1,17 @@
+pyproject.toml
+fairsend/__init__.py
+fairsend/config.py
+fairsend/db.py
+fairsend/fx.py
+fairsend.egg-info/PKG-INFO
+fairsend.egg-info/SOURCES.txt
+fairsend.egg-info/dependency_links.txt
+fairsend.egg-info/entry_points.txt
+fairsend.egg-info/requires.txt
+fairsend.egg-info/top_level.txt
+fairsend/pipeline/__init__.py
+fairsend/pipeline/clean.py
+fairsend/pipeline/ingest.py
+fairsend/pipeline/quality.py
+fairsend/pipeline/run.py
+fairsend/sql/schema.sql

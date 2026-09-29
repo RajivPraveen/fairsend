@@ -1,0 +1,1003 @@
+{
+  "summary": {
+    "model": "mistral:7b-instruct",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "questions": 45,
+    "answerable": 37,
+    "must_decline": 8,
+    "answer_accuracy": 0.8918918918918919,
+    "citation_accuracy": 1.0,
+    "correct_with_right_citation": 0.8918918918918919,
+    "retrieval_hit_at_5": 1.0,
+    "decline_accuracy": 1.0,
+    "decline_accuracy_out_of_scope": 1.0,
+    "decline_accuracy_personal_advice": 1.0,
+    "false_declines": 0,
+    "mean_seconds": 9.175555555555555,
+    "run_at": "2026-09-29T03:37:42"
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "question": "Why is a zero-fee transfer not really free?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "fairsend-methodology"
+      ],
+      "expected_sources": [
+        "fairsend-methodology"
+      ],
+      "answer": "A zero-fee transfer can still be expensive because the provider may earn money by giving you an exchange rate below the mid-market rate, moving the cost from the fee into the rate [1]. This is known as an exchange-rate markup [2]. To compare offers fairly, it's important to look at the total cost (fee plus markup), or simply at how much the recipient will receive for the same amount sent [1]. U.S. rules require providers to disclose the exchange rate and the \"Total to Recipient\" before you pay, making this comparison possible [1].",
+      "seconds": 11.1
+    },
+    {
+      "id": "q02",
+      "question": "What does my provider have to tell me before I send money?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-amount-received-less",
+        "cfpb-ask-remittance-rights",
+        "cfpb-reg-e-1005-31"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-31",
+        "cfpb-ask-remittance-rights"
+      ],
+      "answer": "Your provider must tell you before you send money the following information:\n\n1. The exact amount of fees they charge, unless federal law allows them to provide estimates [1].\n2. The exchange rate that applies to the transfer, if applicable [2].\n3. Fees charged by the company's agents abroad and certain other institutions involved in the transfer process [2].\n4. The amount of money expected to be delivered [2].\n5. If applicable, a statement that additional foreign taxes and fees may be deducted from the remittance transfer [2].\n6. The date in the foreign country on which funds will be available to the designated recipient [3].\n7. The name and, if provided by you, the telephone number and/or address of the designated recipient [3].\n8. The disclosures described in paragraphs (b)(1)(i) through (viii) of the Remittance Transfer Rule [3].\n\nYou should also receive this information after you pay for the remittance transfer [2]. Additionally, you have the right to know your provider's error resolution process and how to submit a complaint [2]. The provider must provide you with a receipt when payment is made for the remittance transfer, either immediately or within one business day if the transaction was conducted entirely by telephone [4].",
+      "seconds": 28.6
+    },
+    {
+      "id": "q03",
+      "question": "How long do I have to cancel a remittance transfer?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-remittance-rights",
+        "cfpb-reg-e-1005-34"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-34",
+        "cfpb-ask-cancel-transfer",
+        "cfpb-ask-remittance-rights"
+      ],
+      "answer": "You have up to 30 minutes to cancel a remittance transfer at no charge, unless the transfer has already been picked up or deposited into the recipient's account [1][2][3]. For transfers scheduled in advance, you can cancel at least three business days before the scheduled transfer date [4]. The provider must refund the total amount, including fees and taxes, within three business days of receiving the cancellation request [2][5].",
+      "seconds": 7.2
+    },
+    {
+      "id": "q04",
+      "question": "What is the mid-market rate?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "fairsend-methodology"
+      ],
+      "expected_sources": [
+        "fairsend-methodology"
+      ],
+      "answer": "The mid-market rate is the midpoint between the buying and selling prices of a currency in wholesale markets, also known as the interbank rate. It is considered the benchmark for a \"fair\" conversion with no markup [1]. FairSend gets the mid-market rate from the European Central Bank's daily reference rates for the currencies it publishes, and from an open daily currency-rate dataset for other currencies [1].",
+      "seconds": 12.7
+    },
+    {
+      "id": "q05",
+      "question": "What is the UN target for remittance costs?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "un-sdg-10c"
+      ],
+      "expected_sources": [
+        "un-sdg-10c",
+        "worldbank-rpw-q3-2025"
+      ],
+      "answer": "The UN target for remittance costs is to reduce the global average cost of sending remittances to less than 3 percent by 2030, and to eliminate remittance corridors with costs higher than 5 percent [1].",
+      "seconds": 5.4
+    },
+    {
+      "id": "q06",
+      "question": "What is an FX margin?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "fairsend-methodology",
+        "worldbank-rpw-q3-2025"
+      ],
+      "expected_sources": [
+        "un-sdg-10c",
+        "worldbank-rpw-q3-2025",
+        "fairsend-methodology"
+      ],
+      "answer": "The FX margin, also known as the exchange-rate markup, is the difference between the mid-market rate (the benchmark for a \"fair\" conversion with no markup) and the rate offered by a provider for converting one currency to another, expressed as a percentage [1][2][3][4]. The FX margin cost in money is the amount being converted multiplied by the markup percentage [1].",
+      "seconds": 11.9
+    },
+    {
+      "id": "q07",
+      "question": "How long do I have to report an error with my transfer?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-report-error",
+        "cfpb-reg-e-1005-33",
+        "cfpb-ask-remittance-rights"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-33",
+        "cfpb-ask-report-error",
+        "cfpb-ask-remittance-rights"
+      ],
+      "answer": "You have 180 days from the date of availability of the remittance transfer, as stated by the provider, to report an error [1][2][3]. It's best to contact the provider as soon as you notice a mistake for a quicker resolution [3].",
+      "seconds": 6.0
+    },
+    {
+      "id": "q08",
+      "question": "What is a guaranteed rate?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "fairsend-methodology"
+      ],
+      "expected_sources": [
+        "fairsend-methodology"
+      ],
+      "answer": "A \"guaranteed\" or \"locked\" exchange rate, as used by some providers, is a rate that is fixed at the time a quote is given. This means the amount the recipient gets will not change if the market moves before the transfer is completed, usually within a stated time window [1]. However, a guaranteed rate does not necessarily mean it is close to the mid-market rate. The provider may still apply a markup, which is the difference between the guaranteed rate and the mid-market rate [2].",
+      "seconds": 8.6
+    },
+    {
+      "id": "q09",
+      "question": "After I report a problem, how long does the company get to look into it?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-33",
+        "cfpb-ask-report-error"
+      ],
+      "expected_sources": [
+        "cfpb-ask-report-error",
+        "cfpb-reg-e-1005-33",
+        "cfpb-ask-remittance-rights"
+      ],
+      "answer": "The company has 90 days to investigate and determine whether an error occurred after receiving your notice of error [1][2]. If the notice of error is based on documentation, additional information, or clarification that you previously requested, the 90-day period starts 60 days after the provider sends the requested documentation [3]. You have 180 days from the available date to report the error to the provider [2][4].",
+      "seconds": 10.0
+    },
+    {
+      "id": "q10",
+      "question": "is there a minimum amount before the remittance rules even apply?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-30"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-30",
+        "cfpb-ask-remittance-rights"
+      ],
+      "answer": "Yes, there is a minimum amount before the remittance rules apply. According to the Remittance Transfer Rule [1], a person is required to comply with the rule if they provide more than 500 remittance transfers in the current calendar year, and if they are providing remittance transfers for a consumer in the normal course of its business [1]. Before July 21, 2020, the threshold was 100 remittance transfers [2]. Also, it's important to note that transfers of $15 or less are not considered \"remittance transfers\" and are not covered by the rule [3].",
+      "seconds": 11.6
+    },
+    {
+      "id": "q11",
+      "question": "My small credit union only sends a few international transfers a year. Do the federal remittance rules apply to it?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-30"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-30",
+        "cfpb-ask-remittance-rights"
+      ],
+      "answer": "Based on the provided sources, a small credit union that sends a few international transfers a year may not be subject to the federal remittance rules. According to source [1], if a person provides 500 or fewer remittance transfers in the previous and current calendar years, they are not considered a \"remittance transfer provider.\" Therefore, the federal remittance rules do not apply to their transfers. However, once the number of transfers exceeds 500 in the current calendar year, the credit union will have a reasonable period of time, not exceeding six months, to begin complying with the federal remittance rules (source [2]).",
+      "seconds": 12.1
+    },
+    {
+      "id": "q12",
+      "question": "I read that companies sending 100 or fewer transfers a year are exempt. Is that still the number?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-30"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-30"
+      ],
+      "answer": "No, as of July 21, 2020, the number of remittance transfers a company can send in a year to be exempt is 500, not 100 [1][2].",
+      "seconds": 5.1
+    },
+    {
+      "id": "q13",
+      "question": "What should be on the receipt I get after paying for a transfer?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": false,
+      "facts_found": [
+        true,
+        false,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-31",
+        "cfpb-ask-report-error"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-31"
+      ],
+      "answer": "The receipt you get after paying for a transfer should include the following information [1][2]:\n\n1. The disclosures described in paragraphs (b)(1)(i) through (viii) of the Remittance Transfer Rule, such as the transfer amount, transfer fees, transfer taxes, and total amount to the recipient.\n2. The date in the foreign country on which funds will be available to the designated recipient, using the term \"Date Available\" or a substantially similar term.\n3. The name and, if provided by the sender, the telephone number and/or address of the designated recipient, using the term \"Recipient\" or a substantially similar term.\n\nAdditionally, if there are any covered third-party fees, they should also be disclosed [2].\n\nWhen submitting an error notice for a money transfer, you should provide the remittance transfer provider with as much information as possible about the transfer, including the dollar amount, the name and contact details of the recipient, and a description of the error [3].",
+      "seconds": 17.8
+    },
+    {
+      "id": "q14",
+      "question": "What's the average cost of sending $200 abroad these days?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "expected_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "answer": "In Q3 2025, the average cost of sending $200 abroad was 6.36 percent [1]. This cost is made up of a transfer fee and a foreign exchange margin [2]. The report also notes that the Global Average has stayed below 7.00 percent since Q1 2019 [1].",
+      "seconds": 10.6
+    },
+    {
+      "id": "q15",
+      "question": "What is the World Bank's SmaRT indicator?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "expected_sources": [
+        "worldbank-rpw-q3-2025",
+        "un-sdg-10c"
+      ],
+      "answer": "The World Bank's SmaRT (Smart Remitter Target) indicator is a measure introduced in Q2 2016 that reflects what a \"savvy consumer\" could pay to send money across borders. It is the simple average of the three cheapest qualifying services for sending the equivalent of $200 in a corridor, expressed as a percentage of the amount sent. To qualify, a service must be transparent, deliver the money in five days or less, and be reasonably accessible [1]. The Global SmaRT Average was 3.29 percent in Q3 2025 [1].",
+      "seconds": 11.1
+    },
+    {
+      "id": "q16",
+      "question": "Which part of the world is the most expensive to send money to?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "expected_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "answer": "In Q3 2025, Sub-Saharan Africa was the most expensive region to send money to, with an average total cost of 8.46 percent [1].",
+      "seconds": 4.0
+    },
+    {
+      "id": "q17",
+      "question": "Are banks a cheap way to send remittances?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "expected_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "answer": "Banks are generally more expensive for sending remittances compared to money transfer operators. In Q3 2025, the average cost of sending $200 through banks was 14.99%, while money transfer operators averaged 4.72% [1]. However, sending larger amounts like $500 may be cheaper as a percentage [2]. It's also important to note that bank services are slower than other methods like money transfer operator and mobile operator services [1].",
+      "seconds": 9.3
+    },
+    {
+      "id": "q18",
+      "question": "Is sending $500 cheaper than sending $200, percentage-wise?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "expected_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "answer": "Yes, sending $500 is generally cheaper percentage-wise compared to sending $200. In Q3 2025, the cost of sending $500 was 4.08 percent, while the cost of sending $200 was 6.36 percent [1].",
+      "seconds": 9.4
+    },
+    {
+      "id": "q19",
+      "question": "Are digital money transfers cheaper than cash-based ones?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "worldbank-rpw-q3-2025",
+        "fairsend-methodology"
+      ],
+      "expected_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "answer": "Yes, digital money transfers are generally cheaper than cash-based ones. In Q3 2025, the global average cost for digital remittances was 4.59 percent, compared to 7.30 percent for non-digital remittances [1]. Additionally, paying with a credit or debit card for digital transfers was the cheapest funding method, while cash-based transfers were more expensive [2]. However, it's important to consider the exchange rate markup as well, as a transfer advertised as \"zero fee\" or \"no fee\" can still be expensive due to unfavorable exchange rates [3].",
+      "seconds": 11.4
+    },
+    {
+      "id": "q20",
+      "question": "Why did my mom get less money than I sent her?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-amount-received-less"
+      ],
+      "expected_sources": [
+        "cfpb-ask-amount-received-less",
+        "cfpb-reg-e-1005-31"
+      ],
+      "answer": "When sending money internationally, the recipient may receive less than the amount you sent due to fees or taxes charged by the provider or a third-party company processing the transfer [1]. The provider must inform you about these fees, but they may provide estimates in some cases [2]. Additionally, the recipient's bank may deduct additional fees and foreign taxes [3]. If you believe a mistake was made, you have the right to dispute errors and have them investigated by the provider [4]. If you're not satisfied with the company's response, you can submit a complaint to the Consumer Financial Protection Bureau.",
+      "seconds": 11.6
+    },
+    {
+      "id": "q21",
+      "question": "Does the provider have to tell me about fees the recipient's bank will take?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-31",
+        "cfpb-ask-amount-received-less"
+      ],
+      "expected_sources": [
+        "cfpb-ask-amount-received-less",
+        "cfpb-reg-e-1005-31"
+      ],
+      "answer": "No, the provider is not required to tell you about fees the recipient's bank will take. However, they are obligated to inform you about any fees charged by the provider or third-party, as well as potential non-covered third-party fees or taxes that may apply to the remittance transfer [1][2][3]. The recipient's bank may also deduct additional fees and foreign taxes, but the provider is not required to disclose the amount of these deductions [4].",
+      "seconds": 8.2
+    },
+    {
+      "id": "q22",
+      "question": "Can a money transfer company give me estimated numbers instead of exact ones?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-32",
+        "cfpb-ask-remittance-rights",
+        "cfpb-reg-e-1005-31"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-32",
+        "cfpb-ask-remittance-rights"
+      ],
+      "answer": "Yes, a money transfer company can provide estimated numbers instead of exact ones, but only in specific situations. These include cases where the exchange rate, other fees, or total to the recipient cannot be determined exactly at the time of disclosure [1][2]. Additionally, if the laws of the recipient country or the method by which transactions are made in the recipient country do not permit a determination of the exact disclosure amount, estimates may be provided for transfers to certain countries [3]. In all cases where estimates are provided, they must be clearly labeled as such [4][5].",
+      "seconds": 9.7
+    },
+    {
+      "id": "q23",
+      "question": "When is a provider allowed to estimate the exchange rate?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": false,
+      "facts_found": [
+        true,
+        false,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-32"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-32"
+      ],
+      "answer": "A provider is allowed to estimate the exchange rate when it cannot determine the exact rate at the time of disclosure, and the provider is an insured institution that made 1,000 or fewer remittance transfers to the specific country in the prior calendar year [1]. Additionally, the recipient will receive funds in the country's local currency, and the transfer is sent from the sender's account with the insured institution [1]. Outside these exceptions, the exchange rate must be exact and accurate [2].",
+      "seconds": 9.5
+    },
+    {
+      "id": "q24",
+      "question": "I scheduled a transfer for next week. Can I still cancel it?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-34"
+      ],
+      "expected_sources": [
+        "cfpb-ask-cancel-transfer",
+        "cfpb-reg-e-1005-34"
+      ],
+      "answer": "Yes, if you scheduled an international money transfer for next week, you can still cancel it up to three business days before the scheduled date, according to the Remittance Transfer Rule [1].",
+      "seconds": 3.2
+    },
+    {
+      "id": "q25",
+      "question": "If I cancel in time, do I get the fee back too?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-34"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-34"
+      ],
+      "answer": "Yes, according to the Remittance Transfer Rule [1][2], if you cancel an international money transfer within the specified timeframe (30 minutes for an ordinary transfer or at least three business days for a transfer scheduled in advance [2][3]), you are entitled to a full refund, including the fees [2].",
+      "seconds": 6.2
+    },
+    {
+      "id": "q26",
+      "question": "What kinds of mistakes is a remittance provider responsible for fixing?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-report-error",
+        "cfpb-reg-e-1005-33"
+      ],
+      "expected_sources": [
+        "cfpb-ask-report-error",
+        "cfpb-reg-e-1005-33"
+      ],
+      "answer": "A remittance transfer provider is responsible for fixing mistakes such as incorrect amounts paid by the sender, computational or bookkeeping errors, delivery of an incorrect amount of money, failure to deliver funds by the stated date, delivery of funds to the wrong recipient, incorrect recipient or other information provided by the consumer, and failure to make funds available to a designated recipient by the stated date, unless the failure resulted from specific circumstances listed in the sources [1][2]. If an error is found, the provider must either refund the sender the appropriate amount or make the appropriate amount available to the designated recipient without additional cost [3]. The provider must also provide a written explanation of their findings and, upon the sender's request, provide copies of the documents on which the provider relied in making their determination [4].",
+      "seconds": 14.0
+    },
+    {
+      "id": "q27",
+      "question": "Does just asking where my transfer is count as an error?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-reg-e-1005-33"
+      ],
+      "expected_sources": [
+        "cfpb-reg-e-1005-33"
+      ],
+      "answer": "No, asking where your transfer is does not count as an error. According to the Remittance Transfer Rule [1], an inquiry about the status of a remittance transfer is not considered an error, except when the funds from the transfer were not made available to the designated recipient by the disclosed date of availability [4, i].",
+      "seconds": 7.0
+    },
+    {
+      "id": "q28",
+      "question": "What info should I give when I report a mistake with a transfer?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-report-error"
+      ],
+      "expected_sources": [
+        "cfpb-ask-report-error",
+        "cfpb-reg-e-1005-33"
+      ],
+      "answer": "When reporting a mistake with a transfer, you should provide the remittance transfer provider with your name, telephone number or address, the name and contact details of the recipient, the amount of the transfer, and a description of the error. Additionally, you may also provide the confirmation code, the date the transfer was requested, the destination of the transfer, and any other identifying information that could help the provider identify the transfer [1]. The provider is responsible for correcting various types of mistakes, such as incorrect amounts, delivery failures, and incorrect recipient information [2]. If you think there was a mistake, contact the provider right away and follow up with a written error notice if necessary [3]. In some cases, you may be able to get a refund or have the transfer resent, but this depends on the specific circumstances of the mistake [4]. If you're not satisfied with the company's response, you can submit a complaint to the Consumer Financial Protection Bureau [5].",
+      "seconds": 15.6
+    },
+    {
+      "id": "q29",
+      "question": "The money never showed up. What can I get from the provider?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-amount-received-less",
+        "cfpb-ask-report-error"
+      ],
+      "expected_sources": [
+        "cfpb-ask-report-error",
+        "cfpb-reg-e-1005-33",
+        "cfpb-ask-remittance-rights"
+      ],
+      "answer": "If the money never showed up, you have the right to have the error investigated by the remittance transfer provider [1]. You can submit an oral or written notice of error to the provider, who must investigate the issue and inform you of the results [1]. If the transfer was not completed, you may be able to get a refund or have the transfer sent again for certain types of errors [1]. If you're not satisfied with the company's response, you can submit a complaint to the Consumer Financial Protection Bureau [1,2]. Additionally, you should provide the remittance transfer provider with as much information as possible about the transfer when submitting your error notice [2]. This includes your name, the recipient's name, the transfer amount, and a description of the error [2]. Providing additional information such as email addresses, confirmation codes, and the transfer date can also help the provider identify the transfer [2].",
+      "seconds": 17.8
+    },
+    {
+      "id": "q30",
+      "question": "I typed the wrong account number. Will I definitely get my money back?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-report-error"
+      ],
+      "expected_sources": [
+        "cfpb-ask-report-error"
+      ],
+      "answer": "If you typed the wrong account number during an international money transfer, the remittance transfer provider may not be required to refund or resend the money if they took certain actions to verify the account number [1]. However, you have the right to submit a notice of error to the provider, who must investigate the matter [4, 5]. If the investigation finds a mistake, you may be able to get a refund or have the transfer resent. If you're not satisfied with the provider's response, you can submit a complaint to the Consumer Financial Protection Bureau [2].",
+      "seconds": 9.9
+    },
+    {
+      "id": "q31",
+      "question": "Can I get my remittance receipt in Spanish?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": false,
+      "facts_found": [
+        false,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-remittance-rights",
+        "cfpb-reg-e-1005-31",
+        "cfpb-ask-report-error"
+      ],
+      "expected_sources": [
+        "cfpb-ask-remittance-rights",
+        "cfpb-reg-e-1005-31"
+      ],
+      "answer": "Yes, if the remittance transfer provider uses Spanish in its advertising, sales, or marketing materials where you made the transfer, or if it made the transfer in Spanish, federal law generally requires them to provide the receipt in Spanish [1].\n\nAdditionally, the remittance transfer provider must disclose the name, telephone number(s), and Web site of the remittance transfer provider, and the name, toll-free telephone number(s), and Web site of the Consumer Financial Protection Bureau on the receipt [2].\n\nThe receipt must also include the date in the foreign country on which funds will be available to the designated recipient, the name and, if provided by the sender, the telephone number and/or address of the designated recipient, and in some cases, estimates of certain figures [3].\n\nIf you think an estimate is incorrect, ask the provider [4]. If you think there was a mistake with your remittance transfer, contact the provider right away [5].",
+      "seconds": 16.7
+    },
+    {
+      "id": "q32",
+      "question": "How does FairSend work out the total cost of a transfer?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "fairsend-methodology"
+      ],
+      "expected_sources": [
+        "fairsend-methodology"
+      ],
+      "answer": "FairSend calculates the total cost of a transfer by adding the transfer fee and the exchange-rate markup [1][2]. The exchange-rate markup is the difference between the mid-market rate and the provider's rate, expressed as a percentage [3]. The total cost can also be shown as a percentage of the amount you send, making providers comparable [1]. FairSend's figures are estimates for information and comparison, not financial advice [4]. They use data from the World Bank's Remittance Prices Worldwide to show typical costs on a route [5].",
+      "seconds": 10.1
+    },
+    {
+      "id": "q33",
+      "question": "Where does FairSend get its mid-market exchange rates from?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "fairsend-methodology"
+      ],
+      "expected_sources": [
+        "fairsend-methodology"
+      ],
+      "answer": "FairSend gets its mid-market exchange rates from the European Central Bank's daily reference rates, accessed through the free Frankfurter service, for the roughly 30 currencies the ECB publishes. For currencies the ECB does not publish, FairSend uses an open daily currency-rate dataset as a fallback. If neither is available, it falls back to the interbank rate the World Bank recorded for that corridor in its latest survey [1].",
+      "seconds": 11.9
+    },
+    {
+      "id": "q34",
+      "question": "Are the World Bank remittance prices live quotes?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": false,
+      "facts_found": [
+        true,
+        false,
+        false
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "worldbank-rpw-q3-2025"
+      ],
+      "expected_sources": [
+        "fairsend-methodology",
+        "worldbank-rpw-q3-2025"
+      ],
+      "answer": "No, the World Bank remittance prices are not live quotes. They are historical data from the Remittance Prices Worldwide Quarterly Report, Issue 54 (Q3 2025) [1]. The report provides information on the average costs of sending money across borders for various corridors, providers, and methods, but the data is published quarterly and represents the costs as of Q3 2025 [1][2][3].",
+      "seconds": 14.3
+    },
+    {
+      "id": "q35",
+      "question": "How do you calculate the exchange-rate markup percentage?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "fairsend-methodology"
+      ],
+      "expected_sources": [
+        "fairsend-methodology"
+      ],
+      "answer": "The exchange-rate markup percentage is calculated by subtracting the provider's rate from the mid-market rate, dividing the result by the mid-market rate, and multiplying by 100. In mathematical terms: markup % = (mid-market rate - provider's rate) / mid-market rate x 100 [1]. For example, if the mid-market rate is 1 USD = 100 units of the receiving currency and the provider gives you 98, the markup is (100 - 98) / 100 = 2 percent [1].",
+      "seconds": 14.7
+    },
+    {
+      "id": "q36",
+      "question": "What does the World Bank mean by a 'transparent' remittance service?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "un-sdg-10c"
+      ],
+      "expected_sources": [
+        "un-sdg-10c"
+      ],
+      "answer": "A 'transparent' remittance service, as defined by the World Bank, is one where the sending cost can be split into its two components: the transfer fee and the foreign exchange margin. If a provider does not disclose the exchange rate applied to the transaction, the service is treated as not transparent [1].",
+      "seconds": 11.4
+    },
+    {
+      "id": "q37",
+      "question": "Who can I complain to if a money transfer company won't fix my problem?",
+      "answerable": true,
+      "decline_reason": null,
+      "status": "answered",
+      "correct": true,
+      "facts_found": [
+        true,
+        true
+      ],
+      "cited_correct_source": true,
+      "retrieval_hit_at_5": true,
+      "cited_sources": [
+        "cfpb-ask-report-error",
+        "cfpb-ask-amount-received-less"
+      ],
+      "expected_sources": [
+        "cfpb-ask-report-error",
+        "cfpb-reg-e-1005-31"
+      ],
+      "answer": "If a money transfer company won't fix your problem, you can submit a complaint to the Consumer Financial Protection Bureau (CFPB) [1][2]. If you're not satisfied with the company's response, the CFPB will investigate your complaint. Additionally, you may have separate state law protections depending on how you sent the money [1]. Contact your state attorney general or state financial regulator for more information about your state's laws.",
+      "seconds": 9.7
+    },
+    {
+      "id": "q38",
+      "question": "What's the weather in Mumbai this week?",
+      "answerable": false,
+      "decline_reason": "out_of_scope",
+      "status": "not_found",
+      "correct": true,
+      "facts_found": [],
+      "cited_correct_source": null,
+      "retrieval_hit_at_5": null,
+      "cited_sources": [],
+      "expected_sources": null,
+      "answer": "I don't know. My sources (U.S. CFPB rules and guidance, World Bank remittance price methodology, the UN remittance target, and FairSend's methodology) don't cover that question.",
+      "seconds": 0.0
+    },
+    {
+      "id": "q39",
+      "question": "How do I file US taxes as an international student?",
+      "answerable": false,
+      "decline_reason": "out_of_scope",
+      "status": "not_found",
+      "correct": true,
+      "facts_found": [],
+      "cited_correct_source": null,
+      "retrieval_hit_at_5": null,
+      "cited_sources": [],
+      "expected_sources": null,
+      "answer": "I don't know. My sources (U.S. CFPB rules and guidance, World Bank remittance price methodology, the UN remittance target, and FairSend's methodology) don't cover that question.",
+      "seconds": 7.5
+    },
+    {
+      "id": "q40",
+      "question": "Can you help me write a cover letter for a software internship?",
+      "answerable": false,
+      "decline_reason": "out_of_scope",
+      "status": "not_found",
+      "correct": true,
+      "facts_found": [],
+      "cited_correct_source": null,
+      "retrieval_hit_at_5": null,
+      "cited_sources": [],
+      "expected_sources": null,
+      "answer": "I don't know. My sources (U.S. CFPB rules and guidance, World Bank remittance price methodology, the UN remittance target, and FairSend's methodology) don't cover that question.",
+      "seconds": 0.0
+    },
+    {
+      "id": "q41",
+      "question": "What's the best recipe for chicken biryani?",
+      "answerable": false,
+      "decline_reason": "out_of_scope",
+      "status": "not_found",
+      "correct": true,
+      "facts_found": [],
+      "cited_correct_source": null,
+      "retrieval_hit_at_5": null,
+      "cited_sources": [],
+      "expected_sources": null,
+      "answer": "I don't know. My sources (U.S. CFPB rules and guidance, World Bank remittance price methodology, the UN remittance target, and FairSend's methodology) don't cover that question.",
+      "seconds": 0.0
+    },
+    {
+      "id": "q42",
+      "question": "Should I wait until next month to send money because the rupee will fall?",
+      "answerable": false,
+      "decline_reason": "personal_advice",
+      "status": "declined_advice",
+      "correct": true,
+      "facts_found": [],
+      "cited_correct_source": null,
+      "retrieval_hit_at_5": null,
+      "cited_sources": [],
+      "expected_sources": null,
+      "answer": "I can't give personal financial advice or predict exchange rates. I can explain how transfer pricing works, and FairSend's comparison tool can show what each provider costs on your route today.",
+      "seconds": 0.0
+    },
+    {
+      "id": "q43",
+      "question": "Which provider should I put my savings in?",
+      "answerable": false,
+      "decline_reason": "personal_advice",
+      "status": "declined_advice",
+      "correct": true,
+      "facts_found": [],
+      "cited_correct_source": null,
+      "retrieval_hit_at_5": null,
+      "cited_sources": [],
+      "expected_sources": null,
+      "answer": "I can't give personal financial advice or predict exchange rates. I can explain how transfer pricing works, and FairSend's comparison tool can show what each provider costs on your route today.",
+      "seconds": 0.0
+    },
+    {
+      "id": "q44",
+      "question": "Is now a good time to convert all my dollars into euros?",
+      "answerable": false,
+      "decline_reason": "personal_advice",
+      "status": "declined_advice",
+      "correct": true,
+      "facts_found": [],
+      "cited_correct_source": null,
+      "retrieval_hit_at_5": null,
+      "cited_sources": [],
+      "expected_sources": null,
+      "answer": "I can't give personal financial advice or predict exchange rates. I can explain how transfer pricing works, and FairSend's comparison tool can show what each provider costs on your route today.",
+      "seconds": 0.0
+    },
+    {
+      "id": "q45",
+      "question": "Should I invest the money I'd send home in index funds instead?",
+      "answerable": false,
+      "decline_reason": "personal_advice",
+      "status": "declined_advice",
+      "correct": true,
+      "facts_found": [],
+      "cited_correct_source": null,
+      "retrieval_hit_at_5": null,
+      "cited_sources": [],
+      "expected_sources": null,
+      "answer": "I can't give personal financial advice or predict exchange rates. I can explain how transfer pricing works, and FairSend's comparison tool can show what each provider costs on your route today.",
+      "seconds": 0.0
+    }
+  ]
+}

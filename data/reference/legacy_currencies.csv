@@ -1,0 +1,5 @@
+# Currencies replaced during the dataset's coverage (2011 onward). A row applies to dates up to and including `until`.
+iso3,currency,until
+LTU,LTL,2014-12-31
+LVA,LVL,2013-12-31
+HRV,HRK,2022-12-31
